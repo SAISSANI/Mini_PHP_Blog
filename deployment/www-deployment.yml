@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projet-www
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: projet-www
+  template:
+    metadata:
+      labels:
+        app: projet-www
+    spec:
+      containers:
+        - name: www
+          image: unboundedtechnologies/projet-www
+          ports:
+            - containerPort: 80

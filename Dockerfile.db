@@ -1,0 +1,6 @@
+FROM mysql:latest
+ENV MYSQL_DATABASE=php_docker \
+    MYSQL_USER=php_docker \
+    MYSQL_PASSWORD=password \
+    MYSQL_ROOT_PASSWORD=password
+VOLUME ./db:/docker-entrypoint-initdb.d

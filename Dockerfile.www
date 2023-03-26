@@ -1,0 +1,6 @@
+FROM php:apache
+RUN docker-php-ext-install pdo pdo_mysql mysqli
+CMD /usr/sbin/apache2ctl -D FOREGROUND
+COPY index.php /var/www/html/
+COPY test.php /var/www/html/
+EXPOSE 80
